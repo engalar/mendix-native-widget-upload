@@ -10,6 +10,8 @@
     "classnames": "^2.2.6"
   },
   "scripts": {
+    "emulator": " start %LocalAppData%/Android/Sdk/emulator/emulator.exe -netdelay none -netspeed full -studio-params tests/emu.tmp -avd Pixel_2_API_29",
+    "remoteDebugger": "start http://localhost:8083/debugger-ui/",
     "m": "npm install -g cnpm rollup prettier eslint --registry=https://registry.npmmirror.com",
     "x": "npm i --registry=https://registry.npmmirror.com",
     "testProject": "cmd /c git clone https://gitee.com/engalar/mendix-testproject-native-960.git --depth=1 ./tests/testProject && rd /s /q  .\\tests\\testProject\\.git",
@@ -18,7 +20,7 @@
     "prerelease": "npm run lint",
     "openTestProject": "start tests/testProject/testProject.mpr",
     "backupTestProject": "cmd /c (if not exist dummy\\deployment\\data\\database\\hsqldb\\default (mkdir dummy\\deployment\\data\\database\\hsqldb\\default) else (echo skip 1)) && (if not exist dummy\\widgets (mkdir dummy\\widgets) else (echo skip 2)) && copy tests\\testProject\\testProject.mpr dummy\\ /Y && copy tests\\testProject\\deployment\\data\\database\\hsqldb\\default\\default.script dummy\\deployment\\data\\database\\hsqldb\\default\\",
-    "postbackupTestProject": "cmd /c copy tests\\testProject\\widgets\\mendixcn.Graph.mpk dummy\\widgets\\",
+    "postbackupTestProject": "cmd /c copy tests\\testProject\\widgets\\mendixcn.Upload.mpk dummy\\widgets\\",
     "restoreTestProject": "cmd /c xcopy dummy tests\\testProject /E /Y",
     "start": "pluggable-widgets-tools start:native",
     "build": "pluggable-widgets-tools build:native",

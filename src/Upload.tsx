@@ -3,24 +3,27 @@ import { UploadProps } from "../typings/UploadProps";
 import { Pressable, Text, View } from "react-native";
 import { defaultGraphStyle, GraphStyle } from "./ui/Styles";
 import { flattenStyles } from "./piw-native-utils-internal";
+
 import { executeAction } from "./piw-utils-internal";
 
-export default function (props: UploadProps<GraphStyle>): ReactElement {
+export function Upload(props: UploadProps<GraphStyle>): ReactElement {
     const styles = flattenStyles(defaultGraphStyle, props.style);
 
     const renderText = useCallback(() => {
         return (
             <Text testID={`${props.name}$caption`} style={styles.caption}>
-                demo
+                {props.message.displayValue}
             </Text>
         );
-    }, [props.caption, styles]);
+    }, [props.message, styles]);
 
     return (
         <View style={styles.container} testID={props.name}>
             {props.onClick ? (
                 <Pressable
-                    onPress={() => executeAction(props.onClick)}
+                    onPress={() => {
+                        executeAction(props.onClick);
+                    }}
                     android_ripple={{
                         color: styles.container.rippleColor
                     }}
@@ -29,7 +32,8 @@ export default function (props: UploadProps<GraphStyle>): ReactElement {
                 </Pressable>
             ) : (
                 renderText()
-            )}
-        </View>
+            )
+            }
+        </View >
     );
 }

@@ -4,12 +4,12 @@
  * @author Mendix UI Content Team
  */
 import { CSSProperties } from "react";
-import { ActionValue, DynamicValue } from "mendix";
+import { ActionValue, EditableValue } from "mendix";
 
 export interface UploadProps<Style> {
     name: string;
     style: Style[];
-    caption: DynamicValue<string>;
+    message: EditableValue<string>;
     onClick?: ActionValue;
 }
 
@@ -18,6 +18,6 @@ export interface UploadPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
-    caption: string;
+    message: string;
     onClick: {} | null;
 }
