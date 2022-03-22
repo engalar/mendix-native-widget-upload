@@ -1,6 +1,6 @@
 {
-  "name": "graph",
-  "widgetName": "Graph",
+  "name": "upload",
+  "widgetName": "Upload",
   "version": "1.0.0",
   "description": "My widget description",
   "packagePath": "mendixcn",
