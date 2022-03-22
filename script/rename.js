@@ -60,4 +60,9 @@ readXml("./src/package.xml", json => {
     });
 
   });
+
+  fs.rename(`./src/${oldWidgetName}.icon.dark.png`, `./src/${packageConfig.widgetName}.icon.dark.png`, function (err) { console.error(err.message); });
+  fs.rename(`./src/${oldWidgetName}.icon.png`, `./src/${packageConfig.widgetName}.icon.png`, function (err) { console.error(err.message); });
+  fs.rename(`./src/${oldWidgetName}.tile.dark.png`, `./src/${packageConfig.widgetName}.tile.dark.png`, function (err) { console.error(err.message); });
+  fs.rename(`./src/${oldWidgetName}.tile.png`, `./src/${packageConfig.widgetName}.tile.png`, function (err) { console.error(err.message); });
 });

@@ -1,11 +1,11 @@
 import { createElement, ReactElement, useCallback } from "react";
-import { GraphProps } from "../typings/GraphProps";
+import { UploadProps } from "../typings/UploadProps";
 import { Pressable, Text, View } from "react-native";
 import { defaultGraphStyle, GraphStyle } from "./ui/Styles";
 import { flattenStyles } from "./piw-native-utils-internal";
 import { executeAction } from "./piw-utils-internal";
 
-export default function (props: GraphProps<GraphStyle>): ReactElement {
+export default function (props: UploadProps<GraphStyle>): ReactElement {
     const styles = flattenStyles(defaultGraphStyle, props.style);
 
     const renderText = useCallback(() => {
